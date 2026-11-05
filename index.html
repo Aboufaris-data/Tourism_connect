@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tourism Connect · Expériences & Guides Professionnels Agréés au Maroc</title>
+  <meta name="description"
+    content="Plateforme officielle de réservation d'activités et d'excursions avec des guides touristiques agréés par l'État à Aïn Asserdoun (Béni Mellal) et aux Cascades d'Ouzoud (Azilal).">
+
+  <!-- Google Fonts: Bricolage Grotesque & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       Site Header & Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="wrap nav-container">
+      <!-- Brand Logo -->
+      <a class="logo" id="siteLogo" href="#home" title="Tourism Connect Accueil">
+        <i></i>
+        <span>Tourism Connect</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Navigation principale">
+        <ul class="nav-menu">
+          <li><a href="#home" class="active" data-view="home" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#activities" data-view="explorer" data-i18n="nav.activities">Explorer les activités</a></li>
+          <li><a href="#destinations" data-view="destinations" data-i18n="nav.destinations">Destinations</a></li>
+          <li><a href="#become-guide" data-view="becomeGuide" data-i18n="nav.becomeGuide">Devenir Guide</a></li>
+          <li><a href="#about" data-view="about" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#contact" data-view="contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Lang, Theme, Role Demo, CTA) -->
+      <div class="nav-actions">
+        <!-- Language Switcher: FR, AR (RTL), EN, ES -->
+        <div class="lang-selector" role="group" aria-label="Sélecteur de langue">
+          <button data-lang="fr" aria-pressed="true" title="Français">FR</button>
+          <button data-lang="ar" aria-pressed="false" title="العربية (RTL)">عربي</button>
+          <button data-lang="en" aria-pressed="false" title="English">EN</button>
+          <button data-lang="es" aria-pressed="false" title="Español">ES</button>
+        </div>
+
+        <!-- Theme Toggle (Dark/Light) -->
+        <button class="theme-toggle" id="themeToggleBtn" type="button" title="Changer le thème">
+          🌙
+        </button>
+
+        <!-- Role Simulator for Hackathon Presentation -->
+        <div class="role-dropdown" title="Simuler un rôle utilisateur pendant la démonstration">
+          <select id="roleSimulatorSelect" class="form-control"
+            style="padding:5px 10px; font-size:0.82rem; font-weight:700; border-radius:99px; cursor:pointer; background:var(--card); border:1.5px solid var(--blue)">
+            <option value="tourist">🎒 Espace Touriste</option>
+            <option value="guide">🛡️ Espace Guide Agréé</option>
+            <option value="admin">👑 Espace Administrateur</option>
+          </select>
+        </div>
+
+        <!-- Prominent Explore Button -->
+        <a class="btn btn-blue btn-sm" href="#activities" data-view-target="explorer" data-i18n="nav.exploreBtn">
+          Explorer les expériences
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu" type="button">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNavMenu"
+      style="display:none; flex-direction:column; padding:16px 24px; background:var(--paper); border-bottom:1px solid var(--line); gap:12px">
+      <a href="#home" data-view="home" data-i18n="nav.home">Accueil</a>
+      <a href="#activities" data-view="explorer" data-i18n="nav.activities">Explorer les activités</a>
+      <a href="#destinations" data-view="destinations" data-i18n="nav.destinations">Destinations</a>
+      <a href="#become-guide" data-view="becomeGuide" data-i18n="nav.becomeGuide">Devenir Guide</a>
+      <a href="#about" data-view="about" data-i18n="nav.about">À propos</a>
+      <a href="#contact" data-view="contact" data-i18n="nav.contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Main Container (Home View Sections)
+       ========================================================================== -->
+  <main id="mainContent">
+    <div id="homeSectionsContainer">
+
+      <!-- HERO SECTION -->
+      <section class="hero" id="home">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <span class="badge badge-official" data-i18n="hero.badgeOfficial">
+                🛡️ 100% Guides Professionnels Agréés par l'État
+              </span>
+              <h1 data-i18n="hero.headline">Découvrez le Maroc au-delà de l'ordinaire</h1>
+              <p class="hero-lead" data-i18n="hero.subtitle">
+                Explorez des expériences authentiques et parcourez le Maroc aux côtés de guides locaux officiellement
+                agréés.
+              </p>
+              <div class="hero-actions">
+                <a class="btn" href="#activities" data-view-target="explorer" data-i18n="nav.exploreBtn">
+                  Explorer les expériences →
+                </a>
+                <a class="btn o" href="#become-guide" data-view-target="becomeGuide" data-i18n="nav.becomeGuide">
+                  Je suis guide officiel
+                </a>
+              </div>
+            </div>
+
+            <!-- Signature Interactive Phone Simulator Stepper Widget (Kept from original design) -->
+            <div>
+              <div class="phone">
+                <div class="screen" id="phoneScreen" aria-live="polite">
+                  <!-- Generated dynamically by renderHeroPhone() in js/app.js -->
+                </div>
+              </div>
+              <div class="dots" id="phoneDots" role="tablist">
+                <!-- Dot navigation -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Search Bar -->
+          <div class="search-bar-container">
+            <form class="search-bar-form" id="heroSearchForm" onsubmit="event.preventDefault()">
+              <!-- Destination -->
+              <div class="search-field">
+                <label data-i18n="hero.searchDestination">Destination</label>
+                <select id="heroDestSelect">
+                  <option value="all" data-i18n="hero.allDestinations">Toutes les destinations</option>
+                  <option value="ain-asserdoun">Aïn Asserdoun · Béni Mellal</option>
+                  <option value="ouzoud">Cascades d'Ouzoud · Azilal</option>
+                </select>
+              </div>
+
+              <!-- Category -->
+              <div class="search-field">
+                <label data-i18n="hero.searchCategory">Catégorie</label>
+                <select id="heroCatSelect">
+                  <option value="all" data-i18n="hero.allCategories">Toutes les catégories</option>
+                  <option value="hiking">Randonnée & Trekking</option>
+                  <option value="heritage">Visites guidées & Patrimoine</option>
+                  <option value="nature">Nature & Photographie</option>
+                  <option value="water">Activités aquatiques encadrées</option>
+                </select>
+              </div>
+
+              <!-- Target Date -->
+              <div class="search-field">
+                <label data-i18n="hero.searchDate">Date souhaitée</label>
+                <input type="date" id="heroDateInput" value="2026-11-21" min="2026-11-04">
+              </div>
+
+              <!-- Participants -->
+              <div class="search-field">
+                <label data-i18n="hero.searchParticipants">Participants</label>
+                <select id="heroParticipantsSelect">
+                  <option value="1">1 voyageur (Solo)</option>
+                  <option value="2" selected>2 voyageurs</option>
+                  <option value="4">Famille (4 pers.)</option>
+                  <option value="6">Groupe (6+ pers.)</option>
+                </select>
+              </div>
+
+              <!-- Search Button -->
+              <div>
+                <button class="btn btn-blue" id="heroSearchBtn" type="button" data-i18n="hero.searchBtn">
+                  🔍 Rechercher
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST & VALUE PROPOSITION (Saffron Block & Transparent Breakdown) -->
+      <section class="block-s" id="confiance">
+        <div class="wrap">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px">
+            <p class="big" data-i18n="trust.title">
+              La confiance et la sécurité à chaque étape
+            </p>
+            <span class="badge badge-outline"
+              style="background:#283618; color:#FEFAE0; border-color:#283618; font-size:0.95rem; padding:8px 18px"
+              data-i18n="trust.badgeTitle">
+              Place de marché d'expériences locales
+            </span>
+          </div>
+
+          <div class="cols-3">
+            <div class="col-card">
+              <h3 data-i18n="trust.p1Title">Guides 100% Agréés</h3>
+              <p data-i18n="trust.p1Desc">
+                Chaque guide est vérifié avec sa carte officielle du Ministère du Tourisme, son attestation de
+                secourisme et son assurance.
+              </p>
+            </div>
+            <div class="col-card">
+              <h3 data-i18n="trust.p2Title">Tarification Dynamique</h3>
+              <p data-i18n="trust.p2Desc">
+                Prix adapté à la taille de votre groupe et aux tranches d'âge. Commission plateforme de 10% affichée en
+                toute clarté.
+              </p>
+            </div>
+            <div class="col-card">
+              <h3 data-i18n="trust.p3Title">Validation préalable du guide</h3>
+              <p data-i18n="trust.p3Desc">
+                Le guide valide ses disponibilités avant tout paiement. Vous n'êtes débité qu'une fois votre réservation
+                acceptée.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSPARENT COMMISSION TICKET SECTION -->
+      <section style="padding: 72px 0 36px">
+        <div class="wrap two-cols">
+          <div>
+            <span class="badge badge-official" style="margin-bottom:12px">Transparence Totale</span>
+            <h2 data-i18n="trust.badgeDesc">
+              Une place de marché d'expériences 100% dédiée aux guides locaux agréés
+            </h2>
+            <p style="color:var(--mute); margin-top:14px; font-size:1.05rem">
+              Contrairement aux sites de réservation d'hôtels, Tourism Connect soutient directement l'économie locale
+              des montagnes marocaines. 90% du prix payé va directement au guide assermenté.
+            </p>
+
+            <ul class="pts">
+              <li>
+                <b>Guides agréés uniquement</b>
+                <span>Vérification d'identité, badge officiel, langues et spécialités visibles dans le profil
+                  public.</span>
+              </li>
+              <li>
+                <b>Montant total transparent</b>
+                <span>Le paiement affiche séparément la part du guide et les frais de service de la plateforme.</span>
+              </li>
+              <li>
+                <b>Aucun débit sans accord préalable</b>
+                <span>Le guide doit valider sa disponibilité avant la finalisation de la réservation.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sample Ticket Breakdown Card -->
+          <div class="ticket">
+            <small data-i18n="trust.exampleCardTitle">Exemple indicatif · Transparence totale</small>
+            <div class="amt">200 MAD</div>
+            <div class="bar" aria-hidden="true">
+              <i style="width: 90%" title="Part du guide direct (90%)"></i>
+              <i style="width: 10%" title="Plateforme Tourism Connect (10%)"></i>
+            </div>
+            <div class="leg">
+              <span style="color:var(--blue)">● <span data-i18n="trust.exampleGuidePart">Guide 180 MAD
+                  (90%)</span></span>
+              <span style="color:var(--saf)">● <span data-i18n="trust.examplePlatformPart">Plateforme 20 MAD
+                  (10%)</span></span>
+            </div>
+            <p class="n" data-i18n="trust.exampleNote">
+              Avant taxes applicables. Paiement en mode sandbox de hackathon, sans encaissement bancaire réel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED DESTINATIONS SECTION -->
+      <section id="destinations">
+        <div class="wrap">
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px">
+            <div>
+              <span class="badge badge-official" style="margin-bottom:8px">Région Béni Mellal-Khénifra</span>
+              <h2 data-i18n="destinations.title">Deux destinations emblématiques pour démarrer</h2>
+              <p style="color:var(--mute); margin:0" data-i18n="destinations.subtitle">
+                Explorez les joyaux naturels de la région Béni Mellal-Khénifra
+              </p>
+            </div>
+          </div>
+
+          <!-- Dynamic Destination Cards Grid -->
+          <div class="tiles" id="featuredDestinationsContainer">
+            <!-- Populated dynamically by renderDestinationsSection() -->
+          </div>
+
+          <!-- Tags Bar -->
+          <div class="tags" id="destinationQuickTags">
+            <span class="active"
+              onclick="window.tcApp.state.filters.category='hiking'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">🥾
+              Randonnée & Trekking</span>
+            <span
+              onclick="window.tcApp.state.filters.category='heritage'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">🏛️
+              Visites guidées & Patrimoine</span>
+            <span
+              onclick="window.tcApp.state.filters.category='nature'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">📸
+              Nature & Photographie</span>
+            <span
+              onclick="window.tcApp.state.filters.category='water'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">🛶
+              Activités aquatiques encadrées selon les conditions de sécurité</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVITIES EXPLORER SECTION (Page / Dedicated Section) -->
+      <section id="activitiesExplorerSection" style="background:var(--paper); border-top:1px solid var(--line)">
+        <div class="wrap">
+          <div>
+            <span class="badge badge-blue" style="margin-bottom:8px">Catalogue & Réservations</span>
+            <h2 data-i18n="explorer.title">Catalogue complet des activités touristiques</h2>
+            <p style="color:var(--mute)" data-i18n="explorer.subtitle">
+              Trouvez l'excursion idéale encadrée par un guide professionnel agréé
+            </p>
+          </div>
+
+          <!-- Category Pills Bar -->
+          <div class="category-pills-bar" id="categoryPillsBar">
+            <!-- Populated dynamically by renderActivitiesExplorer() -->
+          </div>
+
+          <!-- Main Explorer Layout: Filters Sidebar (Left) + Cards Grid (Right) -->
+          <div class="explorer-layout">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+              <h4 style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px">
+                <span data-i18n="explorer.filtersTitle">Filtres de recherche</span>
+                <button type="button" class="btn btn-sm o" id="sidebarResetBtn"
+                  style="padding:4px 8px; font-size:0.75rem"
+                  onclick="window.tcApp.resetAllFilters && window.tcApp.resetAllFilters()">
+                  Effacer
+                </button>
+              </h4>
+
+              <!-- Search Input -->
+              <div class="filter-group">
+                <label for="searchQueryInput"
+                  style="font-weight:700; font-size:0.85rem; display:block; margin-bottom:6px">Mots-clés</label>
+                <input class="form-control" type="text" id="searchQueryInput"
+                  placeholder="Ex: cascade, borj, barque, moulin...">
+              </div>
+
+              <!-- Destination Filter -->
+              <div class="filter-group">
+                <h4 data-i18n="explorer.filterDestination">Destination</h4>
+                <select class="form-control" id="filterDestination">
+                  <option value="all" data-i18n="hero.allDestinations">Toutes les destinations</option>
+                  <option value="ain-asserdoun">Aïn Asserdoun (Béni Mellal)</option>
+                  <option value="ouzoud">Cascades d'Ouzoud (Azilal)</option>
+                </select>
+              </div>
+
+              <!-- Price Range Slider -->
+              <div class="filter-group">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+                  <h4 style="margin:0" data-i18n="explorer.filterPriceRange">Prix max / personne</h4>
+                  <b style="color:var(--blue); font-size:0.95rem" id="priceRangeDisplay">400 MAD</b>
+                </div>
+                <input class="filter-range" type="range" id="filterPriceRange" min="80" max="400" value="400" step="10">
+                <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--mute)">
+                  <span>80 MAD</span>
+                  <span>400 MAD</span>
+                </div>
+              </div>
+
+              <!-- Difficulty Filter -->
+              <div class="filter-group">
+                <h4 data-i18n="explorer.filterDifficulty">Difficulté physique</h4>
+                <select class="form-control" id="filterDifficulty">
+                  <option value="all" data-i18n="explorer.allDiff">Toutes les difficultés</option>
+                  <option value="easy">Facile (Accessible familles & enfants)</option>
+                  <option value="moderate">Modéré (Marche active & crêtes)</option>
+                  <option value="challenging">Sportif / Trekking</option>
+                </select>
+              </div>
+
+              <!-- Spoken Language Filter -->
+              <div class="filter-group">
+                <h4 data-i18n="explorer.filterLanguage">Langue du guide</h4>
+                <select class="form-control" id="filterLanguage">
+                  <option value="all" data-i18n="explorer.allLangs">Toutes les langues</option>
+                  <option value="Français">Français</option>
+                  <option value="Arabe">Arabe</option>
+                  <option value="Anglais">Anglais</option>
+                  <option value="Espagnol">Espagnol</option>
+                  <option value="Tamazight">Amazigh (Berbère)</option>
+                </select>
+              </div>
+            </aside>
+
+            <!-- Results Section -->
+            <div class="explorer-results">
+              <div class="explorer-header">
+                <div>
+                  <span class="badge badge-outline" id="resultsCountTag">Chargement des activités...</span>
+                </div>
+
+                <!-- Sorting Dropdown -->
+                <div class="sort-select-wrapper">
+                  <label for="sortBySelect" style="font-size:0.88rem; font-weight:700; color:var(--mute)"
+                    data-i18n="explorer.sortBy">Trier par :</label>
+                  <select class="sort-select" id="sortBySelect">
+                    <option value="popular" data-i18n="explorer.sortPopular">Plus populaires</option>
+                    <option value="rating" data-i18n="explorer.sortRating">Mieux notées (⭐ 4.9+)</option>
+                    <option value="priceAsc" data-i18n="explorer.sortPriceAsc">Prix croissant</option>
+                    <option value="priceDesc" data-i18n="explorer.sortPriceDesc">Prix décroissant</option>
+                    <option value="newest">Plus récents</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Activities Cards Grid -->
+              <div class="activities-grid" id="activitiesGrid">
+                <!-- Populated dynamically by renderActivitiesExplorer() -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT US SECTION -->
+      <section id="aboutSection" style="background:var(--paper); border-top:1px solid var(--line)">
+        <div class="wrap wrap-sm">
+          <div style="text-align:center; margin-bottom:36px">
+            <span class="badge badge-official" style="margin-bottom:8px">Notre Mission</span>
+            <h2 data-i18n="about.title">Connecter les voyageurs aux guides officiels du Maroc</h2>
+          </div>
+
+          <p style="font-size:1.05rem; line-height:1.8; color:var(--ink); margin-bottom:20px"
+            data-i18n="about.missionP1">
+            Tourism Connect est né d'une ambition claire lors du Hackathon : valoriser le métier officiel de guide
+            touristique au Maroc, tout en offrant aux voyageurs nationaux et internationaux une expérience sécurisée,
+            authentique et sans mauvaise surprise.
+          </p>
+
+          <p style="font-size:1.05rem; line-height:1.8; color:var(--ink); margin-bottom:36px"
+            data-i18n="about.missionP2">
+            En commençant par les joyaux que sont Aïn Asserdoun à Béni Mellal et les Cascades d'Ouzoud à Azilal, notre
+            plateforme met fin aux circuits informels et aux intermédiaires abusifs. Nous garantissons que 90% des
+            revenus vont directement aux professionnels du terrain.
+          </p>
+
+          <div
+            style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; text-align:center; margin-top:36px; padding:28px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+            <div>
+              <div style="font-family:'Bricolage Grotesque'; font-size:2.8rem; font-weight:800; color:var(--blue)"
+                data-i18n="about.stat1Val">100%</div>
+              <small style="color:var(--mute)" data-i18n="about.stat1Lbl">Guides titulaires de la carte professionnelle
+                d'État</small>
+            </div>
+            <div>
+              <div style="font-family:'Bricolage Grotesque'; font-size:2.8rem; font-weight:800; color:var(--forest)"
+                data-i18n="about.stat2Val">90%</div>
+              <small style="color:var(--mute)" data-i18n="about.stat2Lbl">Des revenus reversés directement au guide
+                local</small>
+            </div>
+            <div>
+              <div style="font-family:'Bricolage Grotesque'; font-size:2.8rem; font-weight:800; color:var(--saf)"
+                data-i18n="about.stat3Val">0 MAD</div>
+              <small style="color:var(--mute)" data-i18n="about.stat3Lbl">Frais cachés pour les visiteurs</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BECOME A GUIDE SECTION -->
+      <section id="becomeGuideSection" style="background:var(--blue-light); border-top:1px solid var(--line)">
+        <div class="wrap two-cols">
+          <div>
+            <span class="badge badge-verified" style="margin-bottom:10px">Espace Professionnel</span>
+            <h2 data-i18n="becomeGuide.title">Rejoignez le réseau des Guides Agréés Tourism Connect</h2>
+            <p style="color:var(--mute); margin:14px 0 24px" data-i18n="becomeGuide.subtitle">
+              Gagnez en visibilité, gérez vos tarifs dégressifs librement et recevez vos réservations sans commission
+              abusive.
+            </p>
+
+            <ul class="pts">
+              <li>
+                <b data-i18n="becomeGuide.req1Title">Carte officielle d'État</b>
+                <span data-i18n="becomeGuide.req1Desc">Être titulaire de la carte de guide agréé délivrée par le
+                  Ministère du Tourisme du Maroc.</span>
+              </li>
+              <li>
+                <b data-i18n="becomeGuide.req2Title">Assurance & Secourisme</b>
+                <span data-i18n="becomeGuide.req2Desc">Attestation de secourisme valide et assurance en responsabilité
+                  civile professionnelle.</span>
+              </li>
+              <li>
+                <b data-i18n="becomeGuide.req3Title">Tarifs transparents</b>
+                <span data-i18n="becomeGuide.req3Desc">Fixez librement vos paliers de groupe et réductions d'âge sur
+                  votre espace personnel.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Application Form Card -->
+          <div
+            style="background:var(--card); border:2px solid var(--line); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-md)">
+            <h3 style="margin-bottom:8px">Candidature Guide Partenaire</h3>
+            <p style="color:var(--mute); font-size:0.88rem; margin-bottom:20px">
+              Remplissez ce formulaire pour soumettre votre dossier de vérification à l'administration de Tourism
+              Connect.
+            </p>
+
+            <form id="becomeGuideForm">
+              <div class="form-group">
+                <label>Nom et Prénom complet</label>
+                <input class="form-control" type="text" placeholder="Ex: Tariq Idrissi" required>
+              </div>
+
+              <div class="form-group">
+                <label>Numéro de Carte Professionnelle du Ministère</label>
+                <input class="form-control" type="text" placeholder="Ex: MA-AZ-2024-XXXX" required>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+                <div class="form-group">
+                  <label>Ville d'exercice</label>
+                  <select class="form-control">
+                    <option value="azilal">Azilal (Cascades d'Ouzoud)</option>
+                    <option value="benimellal">Béni Mellal (Aïn Asserdoun)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Années d'expérience</label>
+                  <input class="form-control" type="number" min="1" max="40" value="5" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Téléphone professionnel / WhatsApp</label>
+                <input class="form-control" type="tel" placeholder="+212 6 XX XX XX XX" required>
+              </div>
+
+              <button class="btn btn-forest" type="submit" style="width:100%; padding:14px"
+                data-i18n="becomeGuide.applyBtn">
+                ✓ Déposer mon dossier de guide partenaire
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT US SECTION -->
+      <section id="contactSection" style="background:var(--paper); border-top:1px solid var(--line)">
+        <div class="wrap two-cols">
+          <div>
+            <span class="badge badge-blue" style="margin-bottom:10px">Assistance 7j/7</span>
+            <h2 data-i18n="contact.title">Contactez l'équipe Tourism Connect</h2>
+            <p style="color:var(--mute); margin:12px 0 24px" data-i18n="contact.subtitle">
+              Une question sur une réservation ou un itinéraire ? Nos équipes de Béni Mellal et Azilal vous répondent.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:16px; margin-top:24px">
+              <div
+                style="background:var(--card); border:1px solid var(--line); padding:16px; border-radius:var(--radius-md)">
+                <b data-i18n="contact.emergencyHotline">Permanence touristique 7j/7 :</b>
+                <div
+                  style="font-family:'Bricolage Grotesque'; font-size:1.4rem; color:var(--blue); font-weight:800; margin-top:4px">
+                  +212 (0) 5 23 48 00 00
+                </div>
+              </div>
+
+              <div
+                style="background:var(--card); border:1px solid var(--line); padding:16px; border-radius:var(--radius-md)">
+                <b>📍 Bureaux régionaux :</b>
+                <div style="font-size:0.9rem; color:var(--mute); margin-top:4px" data-i18n="contact.officeAin">
+                  Béni Mellal : Borj Ras el-Aïn, Bd Hassan II
+                </div>
+                <div style="font-size:0.9rem; color:var(--mute); margin-top:4px" data-i18n="contact.officeOuzoud">
+                  Azilal : Place du Belvédère des Cascades
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            style="background:var(--card); border:1.5px solid var(--line); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-sm)">
+            <form id="contactForm">
+              <div class="form-group">
+                <label data-i18n="contact.formName">Votre nom</label>
+                <input class="form-control" type="text" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="contact.formEmail">Votre adresse e-mail</label>
+                <input class="form-control" type="email" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="contact.formSubject">Sujet</label>
+                <input class="form-control" type="text" placeholder="Question sur une excursion..." required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="contact.formMessage">Votre message</label>
+                <textarea class="form-control" rows="4" required></textarea>
+              </div>
+
+              <button class="btn btn-blue" type="submit" style="width:100%" data-i18n="contact.sendBtn">
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- End of #homeSectionsContainer -->
+
+    <!-- ==========================================================================
+         DASHBOARD VIEW CONTAINER (Tourist, Guide, Admin)
+         ========================================================================== -->
+    <section id="dashboardSection" style="display:none; padding:48px 0 96px; min-height:80vh">
+      <div class="wrap">
+        <button class="btn btn-sm o" style="margin-bottom:24px" onclick="window.tcApp.switchView('home')">
+          ← Retour à l'accueil
+        </button>
+
+        <div id="dashboardContainer">
+          <!-- Populated by renderActiveDashboard() in js/app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       MODALS
+       ========================================================================== -->
+
+  <!-- 0. Destination Details Modal (Guides of that place + Available Activities & Prices) -->
+  <div class="modal-overlay" id="destinationDetailsModal" role="dialog" aria-modal="true"
+    aria-label="Détails de la destination et guides">
+    <div class="modal-container" style="max-width:1160px">
+      <button class="modal-close-btn" id="closeDestinationModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="destinationModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Activity Details Modal (with Gallery, Specs, Reviews, and Sticky Dynamic Pricing Calculator) -->
+  <div class="modal-overlay" id="activityDetailsModal" role="dialog" aria-modal="true"
+    aria-label="Détails de l'activité">
+    <div class="modal-container" style="max-width:1160px">
+      <button class="modal-close-btn" id="closeActivityModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="activityModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Guide Profile Modal -->
+  <div class="modal-overlay" id="guideProfileModal" role="dialog" aria-modal="true"
+    aria-label="Profil du guide professionnel agréé">
+    <div class="modal-container" style="max-width:960px">
+      <button class="modal-close-btn" id="closeGuideModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="guideModalContent" style="padding:16px 24px">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Multi-Step Booking & Sandbox Checkout Modal (Steps 1 to 8) -->
+  <div class="modal-overlay" id="bookingCheckoutModal" role="dialog" aria-modal="true"
+    aria-label="Tunnel de réservation">
+    <div class="modal-container" style="max-width:840px">
+      <button class="modal-close-btn" id="closeCheckoutModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="checkoutModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Printable Tour Voucher Modal (PDF simulation) -->
+  <div class="modal-overlay" id="voucherModal" role="dialog" aria-modal="true" aria-label="Bon d'échange voyageur">
+    <div class="modal-container" style="max-width:680px">
+      <button class="modal-close-btn" id="closeVoucherModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="voucherModalContent" style="padding:24px">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Write a Review Modal -->
+  <div class="modal-overlay" id="reviewModal" role="dialog" aria-modal="true" aria-label="Laisser un avis">
+    <div class="modal-container" style="max-width:580px">
+      <button class="modal-close-btn" id="closeReviewModalBtn" title="Fermer" aria-label="Fermer">✕</button>
+      <div id="reviewModalContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#FFFFFF; margin-bottom:16px">
+            <i></i>
+            <span>Tourism Connect</span>
+          </div>
+          <p style="color:#BAC89B; font-size:0.92rem; max-width:36ch; line-height:1.6">
+            La première place de marché marocaine connectant les visiteurs aux guides touristiques professionnels agréés
+            par le Ministère du Tourisme.
+          </p>
+          <div style="margin-top:20px">
+            <span class="badge badge-official">Prototype Hackathon 2026</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="#destinations"
+                onclick="window.tcApp.state.filters.destination='ain-asserdoun'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Aïn
+                Asserdoun · Béni Mellal</a></li>
+            <li><a href="#destinations"
+                onclick="window.tcApp.state.filters.destination='ouzoud'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Cascades
+                d'Ouzoud · Azilal</a></li>
+            <li><a href="#destinations">Moyen & Haut Atlas Central</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Activités</h4>
+          <ul class="footer-links">
+            <li><a href="#activities"
+                onclick="window.tcApp.state.filters.category='hiking'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Randonnée
+                & Trekking</a></li>
+            <li><a href="#activities"
+                onclick="window.tcApp.state.filters.category='heritage'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Visites
+                & Patrimoine</a></li>
+            <li><a href="#activities"
+                onclick="window.tcApp.state.filters.category='nature'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Nature
+                & Photographie</a></li>
+            <li><a href="#activities"
+                onclick="window.tcApp.state.filters.category='water'; window.tcApp.switchView('explorer'); window.tcApp.renderActivitiesExplorer();">Activités
+                aquatiques encadrées</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Espaces & Confiance</h4>
+          <ul class="footer-links">
+            <li><a href="#"
+                onclick="window.tcApp.state.currentRole='tourist'; window.tcApp.switchView('touristDashboard'); return false;">Espace
+                Voyageur</a></li>
+            <li><a href="#"
+                onclick="window.tcApp.state.currentRole='guide'; window.tcApp.switchView('guideDashboard'); return false;">Espace
+                Guide Professionnel</a></li>
+            <li><a href="#"
+                onclick="window.tcApp.state.currentRole='admin'; window.tcApp.switchView('adminDashboard'); return false;">Espace
+                Administrateur</a></li>
+            <li><a href="#become-guide" onclick="window.tcApp.switchView('becomeGuide');">Devenir Guide Partenaire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <span>Tourism Connect · Pitch Hackathon Tourisme & Innovation Maroc</span>
+        </div>
+        <div style="font-size:0.82rem; color:#BAC89B" data-i18n="footer.prototypeNotice">
+          Prototype de démonstration interactif avec données réalistes et paiement sandbox.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Data, i18n, Calculator, and Application Controller -->
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
